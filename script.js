@@ -21,3 +21,16 @@ function bookCall(){
 
   window.open("https://wa.me/346XXXXXXXX?text=" + message, "_blank");
 }
+
+function openWhatsApp(){
+  const message = encodeURIComponent("Hola, quiero información sobre sus servicios");
+  window.open("https://wa.me/346XXXXXXXX?text=" + message, "_blank");
+}
+
+function openInstagram(){
+  window.open("https://instagram.com/TU_USUARIO", "_blank");
+}
+
+function openEmail(){
+  window.location.href = "mailto:tuemail@gmail.com";
+}
