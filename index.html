@@ -5,80 +5,90 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obsidian Circle</title>
 
+  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-    body{background:#0b0f1a;color:white}
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-    header{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:20px 40px;position:fixed;width:100%;top:0;
-      background:rgba(0,0,0,0.4);backdrop-filter:blur(10px);
-      z-index:1000;
-    }
+<body>
 
-    header a{
-      background:#f97316;padding:10px 20px;border-radius:10px;
-      text-decoration:none;color:white;font-weight:500;
-    }
+<header>
+  <h1>Obsidian Circle</h1>
+  <a href="#contacto">Contactar</a>
+</header>
 
-    .hero{
-      height:100vh;display:flex;flex-direction:column;
-      justify-content:center;align-items:center;text-align:center;
-      background:linear-gradient(180deg,#0b0f1a,#111827);
-      padding:20px;
-    }
+<section class="hero">
+  <h2>Contenido que hace crecer tu marca</h2>
+  <p>Fotografía y video profesional para negocios que quieren destacar</p>
+  <a href="#paquetes" class="btn">Ver paquetes</a>
+</section>
 
-    .hero h2{font-size:52px;margin-bottom:10px}
-    .hero p{color:#9ca3af;margin-bottom:30px}
+<section class="gallery">
+  <h2>Nuestro trabajo</h2>
+  <p>Contenido visual que convierte clientes</p>
 
-    .btn{
-      background:#f97316;padding:14px 28px;border-radius:12px;
-      text-decoration:none;color:white;border:none;cursor:pointer;
-      transition:0.3s;
-    }
+  <div class="gallery-grid">
+    <img src="https://via.placeholder.com/400">
+    <img src="https://via.placeholder.com/400">
+    <img src="https://via.placeholder.com/400">
+  </div>
+</section>
 
-    .btn:hover{transform:scale(1.05)}
+<section id="paquetes" class="packages">
 
-    .gallery{
-      padding:60px 20px;text-align:center;
-    }
+  <div class="card">
+    <h3>Básico</h3>
+    <p>Sesión de fotos (10 imágenes editadas)</p>
+    <div class="price">50 000 Colones</div>
+    <button class="btn" onclick="selectPlan('Básico')">Elegir</button>
+  </div>
 
-    .gallery-grid{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:15px;margin-top:30px;
-    }
+  <div class="card">
+    <h3>Pro</h3>
+    <p>Fotos + 1 video corto</p>
+    <div class="price">100 000 Colones</div>
+    <button class="btn" onclick="selectPlan('Pro')">Elegir</button>
+  </div>
 
-    .gallery img{
-      width:100%;border-radius:15px;transition:0.3s;
-    }
+  <div class="card">
+    <h3>Premium</h3>
+    <p>Fotos + 3 videos + contenido publicitario</p>
+    <div class="price">200 000 Colones</div>
+    <button class="btn" onclick="selectPlan('Premium')">Elegir</button>
+  </div>
 
-    .gallery img:hover{transform:scale(1.05)}
+</section>
 
-    .packages{
-      display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;padding:40px;
-    }
+<section class="section">
+  <h2>¿Por qué elegirnos?</h2>
+  <p>
+    Creamos contenido que no solo se ve bien, sino que genera resultados.
+    Cada foto y video está diseñado para atraer clientes y elevar tu marca.
+  </p>
+</section>
 
-    .card{
-      background:#111827;padding:25px;border-radius:20px;
-      transition:0.3s;border:1px solid rgba(255,255,255,0.05);
-    }
+<section id="contacto" class="section contact">
+  <h2>Contáctanos</h2>
 
-    .card:hover{
-      transform:translateY(-10px) scale(1.02);
-      box-shadow:0 20px 40px rgba(0,0,0,0.6);
-    }
+  <form onsubmit="sendForm(event)">
+    <input type="text" id="name" placeholder="Nombre" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="message" placeholder="Mensaje" required></textarea>
+    <button class="btn">Enviar</button>
+  </form>
 
-    .price{font-size:32px;margin:10px 0}
+  <p style="margin-top:20px">O agenda directamente:</p>
+  <button class="btn" onclick="bookCall()">Reservar por WhatsApp</button>
+</section>
 
-    .section{
-      text-align:center;padding:60px 20px;
-    }
+<footer>
+  © 2026 Obsidian Circle
+</footer>
 
-    .section p{color:#9ca3af;max-width:600px;margin:auto}
+<!-- JS -->
+<script src="script.js"></script>
 
-    .contact form{
-      max-width:400px;margin:auto;margin-top:20px;
+</body>
 </html>
