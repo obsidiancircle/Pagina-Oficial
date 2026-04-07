@@ -6,8 +6,10 @@ function selectPlan(plan){
       "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle";
   }
 
-  document.getElementById('contacto')
-    .scrollIntoView({behavior:'smooth'});
+  const contacto = document.getElementById('contacto');
+  if(contacto){
+    contacto.scrollIntoView({behavior:'smooth'});
+  }
 }
 
 function sendForm(e){
@@ -33,7 +35,7 @@ function openWhatsApp(){
     "Hola, quiero información sobre sus servicios"
   );
 
-  const phone = "50686657871"; // 👈 tu número (SIN +)
+  const phone = "50686657871"; // 👈 tu número
 
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
@@ -47,3 +49,4 @@ function openInstagram(){
 
 function openEmail(){
   window.location.href = "mailto:obsidiancircleagency@gmail.com";
+}
