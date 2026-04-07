@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Obsidian Circle</title>
 
-  <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Icons (minimalistas) -->
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -69,26 +70,4 @@
   </p>
 </section>
 
-<section id="contacto" class="section contact">
-  <h2>Contáctanos</h2>
-
-  <form onsubmit="sendForm(event)">
-    <input type="text" id="name" placeholder="Nombre" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <textarea id="message" placeholder="Mensaje" required></textarea>
-    <button class="btn">Enviar</button>
-  </form>
-
-  <p style="margin-top:20px">O agenda directamente:</p>
-  <button class="btn" onclick="bookCall()">Reservar por WhatsApp</button>
-</section>
-
-<footer>
-  © 2026 Obsidian Circle
-</footer>
-
-<!-- JS -->
-<script src="script.js"></script>
-
-</body>
 </html>
