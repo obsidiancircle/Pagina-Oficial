@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambora Capital</title>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+    }
+
+    header h1{
+      font-weight:700;
+    }
+
+    header a{
+      background:#f97316;
+      padding:10px 20px;
+      border-radius:10px;
+      text-decoration:none;
+      color:white;
+    }
+
+    .hero{
+      height:80vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+    }
+
+    .hero h2{
+      font-size:48px;
+      margin-bottom:10px;
+    }
+
+    .hero p{
+      color:#94a3b8;
+      margin-bottom:20px;
+    }
+
+    .btn{
+      background:#f97316;
+      padding:12px 24px;
+      border-radius:12px;
+      text-decoration:none;
+      color:white;
+      cursor:pointer;
+      border:none;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      opacity:0.8;
+    }
+
+    .packages{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+      padding:40px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .price{
+      font-size:32px;
+      margin:10px 0;
+    }
+
+    .contact{
+      padding:60px 20px;
+      text-align:center;
+    }
+
+    .contact form{
+      max-width:400px;
+      margin:auto;
+    }
+
+    input,textarea{
+      width:100%;
+      padding:12px;
+      margin-bottom:10px;
+      border:none;
+      border-radius:10px;
+      background:#1e293b;
+      color:white;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#64748b;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Ambora Capital</h1>
+  <a href="#contacto">Contactar</a>
+</header>
+
+<section class="hero">
+  <h2>Escala tu capital con estrategia</h2>
+  <p>Ofrecemos paquetes diseñados para maximizar resultados en trading</p>
+  <a href="#paquetes" class="btn">Ver paquetes</a>
+</section>
+
+<section id="paquetes" class="packages">
+
+  <div class="card">
+    <h3>Básico</h3>
+    <p>Acceso inicial</p>
+    <div class="price">$50</div>
+    <button class="btn" onclick="selectPlan('Básico')">Elegir</button>
+  </div>
+
+  <div class="card">
+    <h3>Pro</h3>
+    <p>Mejor rendimiento</p>
+    <div class="price">$100</div>
+    <button class="btn" onclick="selectPlan('Pro')">Elegir</button>
+  </div>
+
+  <div class="card">
+    <h3>Premium</h3>
+    <p>Máximo nivel</p>
+    <div class="price">$200</div>
+    <button class="btn" onclick="selectPlan('Premium')">Elegir</button>
+  </div>
+
+</section>
+
+<section id="contacto" class="contact">
+  <h2>Contáctanos</h2>
+
+  <form onsubmit="sendForm(event)">
+    <input type="text" id="name" placeholder="Nombre" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="message" placeholder="Mensaje" required></textarea>
+    <button class="btn">Enviar</button>
+  </form>
+
+  <p style="margin-top:20px">O agenda directamente:</p>
+  <button class="btn" onclick="bookCall()">Reservar llamada</button>
+</section>
+
+<footer>
+  © 2026 Ambora Capital
+</footer>
+
+<script>
+  function selectPlan(plan){
+    alert("Has seleccionado el plan: " + plan);
+    document.getElementById('message').value = "Estoy interesado en el plan " + plan;
+    document.getElementById('contacto').scrollIntoView({behavior:'smooth'});
+  }
+
+  function sendForm(e){
+    e.preventDefault();
+    let name = document.getElementById('name').value;
+    alert("Gracias " + name + ", te contactaremos pronto.");
+  }
+
+  function bookCall(){
+    window.open("https://wa.me/123456789","_blank");
+  }
+</script>
+
+</body>
+</html>
