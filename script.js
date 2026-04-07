@@ -1,6 +1,10 @@
 function selectPlan(plan){
-  document.getElementById('message').value =
-    "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle";
+  const messageInput = document.getElementById('message');
+
+  if(messageInput){
+    messageInput.value =
+      "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle";
+  }
 
   document.getElementById('contacto')
     .scrollIntoView({behavior:'smooth'});
@@ -19,18 +23,27 @@ function bookCall(){
     "Hola, quiero información sobre sus servicios de fotografía y video"
   );
 
-  window.open("https://wa.me/346XXXXXXXX?text=" + message, "_blank");
+  const phone = "346XXXXXXXX"; // 👈 cambia esto
+
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
 
 function openWhatsApp(){
-  const message = encodeURIComponent("Hola, quiero información sobre sus servicios");
-  window.open("https://wa.me/+50686657871" + message, "_blank");
+  const message = encodeURIComponent(
+    "Hola, quiero información sobre sus servicios"
+  );
+
+  const phone = "50686657871"; // 👈 tu número (SIN +)
+
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 }
 
 function openInstagram(){
-  window.open("https://www.instagram.com/obsidiancircleagency?igsh=YnFoM3EwMDA0ZXQ5");
+  window.open(
+    "https://www.instagram.com/obsidiancircleagency?igsh=YnFoM3EwMDA0ZXQ5",
+    "_blank"
+  );
 }
 
 function openEmail(){
-  window.location.href = "Obsidiancircleagency@gmail.com";
-}
+  window.location.href = "mailto:obsidiancircleagency@gmail.com";
