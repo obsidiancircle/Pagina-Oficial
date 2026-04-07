@@ -24,13 +24,13 @@ function bookCall(){
 
 function openWhatsApp(){
   const message = encodeURIComponent("Hola, quiero información sobre sus servicios");
-  window.open("https://wa.me/346XXXXXXXX?text=" + message, "_blank");
+  window.open("https://wa.me/+50686657871" + message, "_blank");
 }
 
 function openInstagram(){
-  window.open("https://instagram.com/TU_USUARIO", "_blank");
+  window.open("https://www.instagram.com/obsidiancircleagency?igsh=YnFoM3EwMDA0ZXQ5");
 }
 
 function openEmail(){
-  window.location.href = "mailto:tuemail@gmail.com";
+  window.location.href = "Obsidiancircleagency@gmail.com";
 }
