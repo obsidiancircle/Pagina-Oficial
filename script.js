@@ -1,12 +1,9 @@
 function selectPlan(plan){
-  alert("Has seleccionado el plan: " + plan);
-
   document.getElementById('message').value =
-    "Estoy interesado en el plan " + plan;
+    "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle";
 
-  document
-    .getElementById('contacto')
-    .scrollIntoView({ behavior:'smooth' });
+  document.getElementById('contacto')
+    .scrollIntoView({behavior:'smooth'});
 }
 
 function sendForm(e){
@@ -18,5 +15,9 @@ function sendForm(e){
 }
 
 function bookCall(){
-  window.open("https://wa.me/346XXXXXXXX","_blank");
+  const message = encodeURIComponent(
+    "Hola, quiero información sobre sus servicios de fotografía y video"
+  );
+
+  window.open("https://wa.me/346XXXXXXXX?text=" + message, "_blank");
 }
