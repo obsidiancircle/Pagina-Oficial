@@ -1,14 +1,15 @@
 function selectPlan(plan){
-  const messageInput = document.getElementById('message');
+  const message = encodeURIComponent(
+    "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle"
+  );
 
-  if(messageInput){
-    messageInput.value =
-      "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle";
-  }
+  const phone = "50686657871"; // 👈 cambia si quieres
+
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
   const contacto = document.getElementById('contacto');
   if(contacto){
-    contacto.scrollIntoView({behavior:'smooth'});
+    contacto.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -20,19 +21,9 @@ function sendForm(e){
   alert("Gracias " + name + ", te contactaremos pronto.");
 }
 
-function bookCall(){
-  const message = encodeURIComponent(
-    "Hola, quiero información sobre sus servicios de fotografía y video"
-  );
-
-  const phone = "346XXXXXXXX"; // 👈 cambia esto
-
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-}
-
 function openWhatsApp(){
   const message = encodeURIComponent(
-    "Hola, quiero información sobre sus servicios"
+    "Hola, quiero información sobre sus servicios de fotografía y video"
   );
 
   const phone = "50686657871"; // 👈 tu número
@@ -42,7 +33,7 @@ function openWhatsApp(){
 
 function openInstagram(){
   window.open(
-    "https://www.instagram.com/obsidiancircleagency?igsh=YnFoM3EwMDA0ZXQ5",
+    "https://www.instagram.com/obsidiancircleagency",
     "_blank"
   );
 }
