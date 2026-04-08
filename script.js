@@ -1,11 +1,57 @@
+let currentPlan = "";
+
+/* =========================
+   SELECCIÓN DE PLAN (NUEVO PANEL)
+========================= */
 function selectPlan(plan){
-  const message = encodeURIComponent(
-    "Hola, estoy interesado en el plan " + plan + " de Obsidian Circle"
-  );
+  currentPlan = plan;
 
-  const phone = "50686657871";
+  const panel = document.getElementById('packagePanel');
+  const title = document.getElementById('panelTitle');
+  const list = document.getElementById('panelBenefits');
 
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener,noreferrer");
+  title.textContent = plan;
+
+  let benefits = [];
+
+  if(plan === "Básico"){
+    benefits = [
+      "10 fotos editadas",
+      "Entrega en 48h",
+      "Alta calidad",
+      "Ideal para iniciar"
+    ];
+  }
+
+  if(plan === "Pro"){
+    benefits = [
+      "20 fotos editadas",
+      "1 video corto",
+      "Optimización para redes",
+      "Entrega prioritaria",
+      "Concepto creativo"
+    ];
+  }
+
+  if(plan === "Premium"){
+    benefits = [
+      "30+ fotos",
+      "3 videos",
+      "Contenido publicitario",
+      "Estrategia de contenido",
+      "Entrega express",
+      "Soporte personalizado"
+    ];
+  }
+
+  list.innerHTML = "";
+  benefits.forEach(b => {
+    const li = document.createElement("li");
+    li.textContent = "✔️ " + b;
+    list.appendChild(li);
+  });
+
+  panel.classList.add("open");
 
   const contacto = document.getElementById('contacto');
   if(contacto){
@@ -16,6 +62,29 @@ function selectPlan(plan){
   }
 }
 
+/* =========================
+   CERRAR PANEL
+========================= */
+function closePanel(){
+  document.getElementById('packagePanel').classList.remove('open');
+}
+
+/* =========================
+   BOTÓN DE CONTRATAR (DEL PANEL)
+========================= */
+function panelSelect(){
+  const message = encodeURIComponent(
+    "Hola, quiero contratar el plan " + currentPlan + " de Obsidian Circle"
+  );
+
+  const phone = "50686657871";
+
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener,noreferrer");
+}
+
+/* =========================
+   FORMULARIO (SI LO USAS)
+========================= */
 function sendForm(e){
   e.preventDefault();
 
@@ -24,6 +93,9 @@ function sendForm(e){
   alert("Gracias " + name + ", te contactaremos pronto.");
 }
 
+/* =========================
+   CONTACTO
+========================= */
 function openWhatsApp(){
   const message = encodeURIComponent(
     "Hola, quiero información sobre sus servicios de fotografía y video"
