@@ -16,8 +16,7 @@ function selectPlan(plan){
 
   let benefits = [];
 
-  if(plan === "Starter Pack
-"){
+  if(plan === "Starter Pack"){
     benefits = [
       "Diagnóstico y estrategia de campaña personalizada para el negocio del cliente.",
       "Producción profesional: video y fotografía en un día de grabación en sitio.",
