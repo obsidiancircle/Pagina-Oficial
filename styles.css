@@ -196,3 +196,91 @@ footer{
   height:40px;
   object-fit:contain;
 }
+
+/* Code para telefono */
+@media (max-width: 768px){
+
+  header{
+    padding:15px 20px;
+  }
+
+  header a{
+    padding:8px 14px;
+    font-size:14px;
+  }
+
+  .logo h1{
+    font-size:16px;
+  }
+
+  .logo img{
+    width:30px;
+    height:30px;
+  }
+
+  /* HERO */
+  .hero{
+    height:auto;
+    padding-top:120px;
+    padding-bottom:60px;
+  }
+
+  .hero h2{
+    font-size:28px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .btn{
+    padding:12px 20px;
+    font-size:14px;
+  }
+
+  /* GALERÍA */
+  .gallery{
+    padding:40px 15px;
+  }
+
+  /* PAQUETES */
+  .packages{
+    padding:20px;
+  }
+
+  .card{
+    padding:20px;
+  }
+
+  .price{
+    font-size:24px;
+  }
+
+  /* SECCIONES */
+  .section{
+    padding:40px 15px;
+  }
+
+  .section h2{
+    font-size:22px;
+  }
+
+  .section p{
+    font-size:14px;
+  }
+
+  /* BOTONES CONTACTO */
+  .social-buttons{
+    gap:15px;
+  }
+
+  .icon-btn{
+    padding:12px;
+  }
+
+  .icon-btn i{
+    width:20px;
+    height:20px;
+  }
+
+}
