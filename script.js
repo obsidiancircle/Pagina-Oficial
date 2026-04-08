@@ -59,7 +59,7 @@ function selectPlan(plan){
   setTimeout(() => {
     details.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "center"
     });
   }, 100);
 }
