@@ -284,3 +284,51 @@ footer{
   }
 
 }
+
+.panel{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 320px;
+  height: 100%;
+  background: #111827;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.6);
+  transition: 0.4s ease;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.panel.open{
+  right: 0;
+}
+
+.panel-content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.panel h2{
+  margin-top: 30px;
+}
+
+.panel ul{
+  list-style: none;
+  padding: 0;
+}
+
+.panel ul li{
+  margin-bottom: 10px;
+  color: #d1d5db;
+}
+
+/* botón cerrar */
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+}
