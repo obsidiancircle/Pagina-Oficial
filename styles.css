@@ -156,8 +156,7 @@ footer{
   color:#6b7280;
 }
 
-------------- Contacto IG, WA y Email
-
+/* Contacto IG, WA y Email */
 .social-buttons{
   display:flex;
   justify-content:center;
@@ -197,7 +196,7 @@ footer{
   object-fit:contain;
 }
 
-/* Code para telefono */
+/* RESPONSIVE */
 @media (max-width: 768px){
 
   header{
@@ -218,7 +217,6 @@ footer{
     height:30px;
   }
 
-  /* HERO */
   .hero{
     height:auto;
     padding-top:120px;
@@ -238,12 +236,10 @@ footer{
     font-size:14px;
   }
 
-  /* GALERÍA */
   .gallery{
     padding:40px 15px;
   }
 
-  /* PAQUETES */
   .packages{
     padding:20px;
   }
@@ -256,7 +252,6 @@ footer{
     font-size:24px;
   }
 
-  /* SECCIONES */
   .section{
     padding:40px 15px;
   }
@@ -269,7 +264,6 @@ footer{
     font-size:14px;
   }
 
-  /* BOTONES CONTACTO */
   .social-buttons{
     gap:15px;
   }
@@ -285,6 +279,7 @@ footer{
 
 }
 
+/* PANEL LATERAL (NO ELIMINADO) */
 .panel{
   position: fixed;
   top: 0;
@@ -323,7 +318,6 @@ footer{
   color: #d1d5db;
 }
 
-/* botón cerrar */
 .close-btn{
   position: absolute;
   top: 10px;
@@ -333,12 +327,15 @@ footer{
   color: white;
 }
 
+/* 🔥 PANEL INFERIOR MEJORADO */
 .package-details{
   display: none;
   padding: 30px 20px;
-  background: #111827;
+  background: #0f172a;
   border-top: 1px solid rgba(255,255,255,0.05);
-  margin-top: 20px;
+  margin-top: 30px;
+  border-radius: 20px 20px 0 0;
+  animation: slideUp 0.4s ease;
 }
 
 .package-details.active{
@@ -351,6 +348,11 @@ footer{
   text-align: center;
 }
 
+.details-content h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
 .details-content ul{
   list-style: none;
   padding: 0;
@@ -360,4 +362,25 @@ footer{
 .details-content ul li{
   margin-bottom: 10px;
   color: #d1d5db;
+  padding: 8px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.details-content ul li:hover{
+  background: rgba(255,255,255,0.08);
+  transform: scale(1.02);
+}
+
+/* animación */
+@keyframes slideUp{
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
