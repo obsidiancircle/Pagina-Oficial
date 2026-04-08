@@ -10,6 +10,8 @@ function selectPlan(plan){
   const title = document.getElementById('detailsTitle');
   const list = document.getElementById('detailsList');
 
+  if(!details || !title || !list) return; // 🔥 protección contra errores
+
   title.textContent = "Plan " + plan;
 
   let benefits = [];
@@ -52,18 +54,27 @@ function selectPlan(plan){
     list.appendChild(li);
   });
 
+  // 🔥 asegurar que se muestre bien
   details.classList.add("active");
 
-  details.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+  setTimeout(() => {
+    details.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 100);
 }
 
 /* =========================
    BOTÓN DE CONTRATAR
 ========================= */
 function panelSelect(){
+
+  if(!currentPlan){
+    alert("Selecciona un plan primero");
+    return;
+  }
+
   const message = encodeURIComponent(
     "Hola, quiero contratar el plan " + currentPlan + " de Obsidian Circle"
   );
@@ -96,4 +107,3 @@ function openInstagram(){
 
 function openEmail(){
   window.location.href = "mailto:obsidiancircleagency@gmail.com";
-}
