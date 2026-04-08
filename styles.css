@@ -329,17 +329,19 @@ footer{
 
 /* 🔥 PANEL INFERIOR MEJORADO */
 .package-details{
-  display: none;
-  padding: 30px 20px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
   background: #0f172a;
   border-top: 1px solid rgba(255,255,255,0.05);
   margin-top: 30px;
   border-radius: 20px 20px 0 0;
-  animation: slideUp 0.4s ease;
+  transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
 .package-details.active{
-  display: block;
+  max-height: 500px; /* suficiente para el contenido */
+  padding: 30px 20px;
 }
 
 .details-content{
