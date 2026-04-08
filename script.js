@@ -10,7 +10,7 @@ function selectPlan(plan){
   const title = document.getElementById('detailsTitle');
   const list = document.getElementById('detailsList');
 
-  if(!details || !title || !list) return; // 🔥 protección contra errores
+  if(!details || !title || !list) return;
 
   title.textContent = "Plan " + plan;
 
@@ -54,7 +54,6 @@ function selectPlan(plan){
     list.appendChild(li);
   });
 
-  // 🔥 asegurar que se muestre bien
   details.classList.add("active");
 
   setTimeout(() => {
@@ -107,3 +106,4 @@ function openInstagram(){
 
 function openEmail(){
   window.location.href = "mailto:obsidiancircleagency@gmail.com";
+}
