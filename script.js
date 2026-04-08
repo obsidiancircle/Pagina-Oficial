@@ -51,7 +51,7 @@ function selectPlan(plan){
 
   benefits.forEach(b => {
     const li = document.createElement("li");
-    li.textContent = "✔️ " + b;
+    li.textContent = "" + b;
     list.appendChild(li);
   });
 
