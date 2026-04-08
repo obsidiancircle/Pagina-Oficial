@@ -18,10 +18,11 @@ function selectPlan(plan){
 
   if(plan === "Básico"){
     benefits = [
-      "10 fotos editadas",
-      "Entrega en 48h",
-      "Alta calidad",
-      "Ideal para iniciar"
+      "Diagnóstico y estrategia de campaña personalizada para el negocio del cliente.",
+      "Producción profesional: video y fotografía en un día de grabación en sitio.",
+      "Edición y adaptación del contenido para Instagram, TikTok y Facebook.",
+      "Gestión y monitoreo durante 3 días postelanzamiento.",
+       "Informe final con métricas, análisis y recomendaciones."
     ];
   }
 
