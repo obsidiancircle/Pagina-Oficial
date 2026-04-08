@@ -1,16 +1,16 @@
 let currentPlan = "";
 
 /* =========================
-   SELECCIÓN DE PLAN (NUEVO PANEL)
+   SELECCION DE PLAN (ABAJO)
 ========================= */
 function selectPlan(plan){
   currentPlan = plan;
 
-  const panel = document.getElementById('packagePanel');
-  const title = document.getElementById('panelTitle');
-  const list = document.getElementById('panelBenefits');
+  const details = document.getElementById('packageDetails');
+  const title = document.getElementById('detailsTitle');
+  const list = document.getElementById('detailsList');
 
-  title.textContent = plan;
+  title.textContent = "Plan " + plan;
 
   let benefits = [];
 
@@ -45,32 +45,23 @@ function selectPlan(plan){
   }
 
   list.innerHTML = "";
+
   benefits.forEach(b => {
     const li = document.createElement("li");
     li.textContent = "✔️ " + b;
     list.appendChild(li);
   });
 
-  panel.classList.add("open");
+  details.classList.add("active");
 
-  const contacto = document.getElementById('contacto');
-  if(contacto){
-    contacto.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'center'
-    });
-  }
+  details.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
 }
 
 /* =========================
-   CERRAR PANEL
-========================= */
-function closePanel(){
-  document.getElementById('packagePanel').classList.remove('open');
-}
-
-/* =========================
-   BOTÓN DE CONTRATAR (DEL PANEL)
+   BOTÓN DE CONTRATAR
 ========================= */
 function panelSelect(){
   const message = encodeURIComponent(
@@ -80,17 +71,6 @@ function panelSelect(){
   const phone = "50686657871";
 
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank", "noopener,noreferrer");
-}
-
-/* =========================
-   FORMULARIO (SI LO USAS)
-========================= */
-function sendForm(e){
-  e.preventDefault();
-
-  let name = document.getElementById('name').value;
-
-  alert("Gracias " + name + ", te contactaremos pronto.");
 }
 
 /* =========================
